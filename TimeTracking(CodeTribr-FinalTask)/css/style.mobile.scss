@@ -1,0 +1,155 @@
+@import "./variables.scss";
+@import "./animations.scss";
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+@mixin flexBox($isFlex, $orientation, $alignOr, $justifyOr) {
+  @if $isFlex {
+    display: flex;
+    flex-direction: $orientation;
+    align-items: $alignOr;
+    justify-content: $justifyOr;
+  }
+}
+@mixin fontStyle($color, $weight, $center) {
+  color: $color;
+  font-weight: $weight;
+  text-align: $center;
+}
+
+body {
+  background-color: $hardcore_blue;
+  font-size: 20px;
+}
+
+main {
+  width: 95%;
+  max-width: 1100px;
+  margin: auto;
+  font-family: "Rubik", sans-serif;
+  animation: brightness 1s;
+  .content {
+    @include flexBox(true, column, center, center);
+    margin-top: 3em;
+    margin-bottom: 3em;
+    .user-wrapper {
+      @include flexBox(true, column, center, center);
+      width: 100%;
+      background-color: $dark_blue;
+      border-radius: 20px;
+      ._header {
+        @include flexBox(true, row, center, center);
+        width: 100%;
+        background-color: $primary_blue;
+        border-radius: 20px;
+        img {
+          width: 70px;
+          margin: 0.5em;
+          border: 2px solid #fff;
+          border-radius: 100%;
+        }
+        h1 {
+          @include flexBox(true, column, left, center);
+          @include fontStyle($pale_blue, 300, left);
+          width: 100%;
+          padding: 0.5em;
+          font-size: 0.9rem;
+          span {
+            color: #fff;
+            font-size: 1.3rem;
+            padding-bottom: 0.5em;
+          }
+        }
+      }
+      ._footer {
+        @include flexBox(true, row, center, center);
+        width: 100%;
+        button {
+          @include fontStyle($pale_blue, 400, center);
+          font-size: 0.9rem;
+          background-color: transparent;
+          display: block;
+          padding: 2em;
+          border: none;
+        }
+        .active {
+          color: #fff;
+        }
+      }
+    }
+    .user-pannel {
+      width: 100%;
+      animation: appear 1.5s;
+      .pannel-box {
+        width: 100%;
+        padding-top: 3em;
+        margin-top: 1em;
+        border-radius: 20px;
+        background-repeat: no-repeat;
+        background-position: 96% -10%;
+        background-size: 30%;
+        .box-content {
+          background-color: $dark_blue;
+          border-radius: 20px;
+          padding: 2em;
+          ._header-box {
+            @include flexBox(true, row, center, center);
+            padding-bottom: 1em;
+            h3, span {
+              display: flex;
+              width: 50%;
+            }
+            h3 {
+              @include fontStyle(#fff, 500, left);
+              justify-content: flex-start;
+              margin: 0;
+            }
+            span {
+              justify-content: flex-end;
+              img {
+                width: 25px;
+              }
+            }
+          }
+          ._body-box {
+            @include flexBox(true, row, center, center);
+            p {
+              width: 50%;
+              margin: 0;
+            }
+            .hrs {
+              @include fontStyle(#fff, 300, left);
+              font-size: 2.5rem;
+            }
+            .period {
+              @include fontStyle($pale_blue, 400, right);
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+      .work {
+        background-color: $work_color;
+        background-image: url(../assets/icons/icon-work.svg);
+      }
+      .play {
+        background-color: $play_color;
+        background-image: url(../assets/icons/icon-play.svg);
+      }
+      .study {
+        background-color: $study_color;
+        background-image: url(../assets/icons/icon-study.svg);
+      }
+      .exercise {
+        background-color: $exercise_color;
+        background-image: url(../assets/icons/icon-exercise.svg);
+      }
+      .social {
+        background-color: $social_color;
+        background-image: url(../assets/icons/icon-social.svg);
+      }
+      .self {
+        background-color: $self_color;
+        background-image: url(../assets/icons/icon-self-care.svg);
+      }
+    }
+  }
+}

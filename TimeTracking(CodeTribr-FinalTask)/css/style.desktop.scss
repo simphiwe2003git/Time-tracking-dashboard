@@ -1,0 +1,76 @@
+@import "./variables.scss";
+main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  .content {
+    flex-direction: row;
+    margin: 0;
+    gap: 1em;
+    .user-wrapper {
+      width: 23%;
+      ._header {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        h1 {
+          width: 80%;
+          padding: 1em;
+          padding-bottom: 3em;
+          span {
+            font-size: clamp(1rem, 4vw, 2rem);
+          }
+        }
+      }
+      ._footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1em;
+        button {
+          padding: 1em;
+          cursor: pointer;
+        }
+        button:hover {
+          color: white;
+        }
+      }
+    }
+    .user-pannel {
+      display: flex;
+      flex-wrap: wrap;
+      width: 75%;
+      gap: 1em;
+      .pannel-box {
+        width: 30%;
+        margin: 0;
+        padding-top: 2em;
+        cursor: pointer;
+        .box-content {
+          ._header-box {
+            h3 {
+              font-size: 0.8rem;
+            }
+            span img {
+              width: 20px;
+            }
+          }
+          ._body-box {
+            flex-direction: column;
+            align-items: flex-start;
+            p {
+              width: 100%;
+            }
+            .period {
+              font-size: 0.8rem;
+              text-align: left;
+            }
+          }
+        }
+      }
+      .pannel-box:hover > .box-content {
+        background-color: hsl(236, 41%, 33%);
+      }
+    }
+  }
+}

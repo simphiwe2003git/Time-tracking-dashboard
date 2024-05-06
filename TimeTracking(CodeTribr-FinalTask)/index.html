@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <title>Time tracking dashboard</title>
+    <link rel="stylesheet" href="./css/style.mobile.css" />
+    <link rel="stylesheet" media="(min-width: 900px)" href="./css/style.desktop.css" />
+  </head>
+  <body>
+    <main>
+      <div class="content">
+        <div class="user-wrapper">
+          <div class="_header">
+            <img
+              src="./assets/img/image-jeremy.png"
+              alt="the good man called Jeremy"
+            />
+            <h1>Report for <span>Jeremy Robson</span></h1>
+          </div>
+          <div class="_footer">
+            <button id="daily">Daily</button>
+            <button id="weekly" class="active">Weekly</button>
+            <button id="monthly">Monthly</button>
+          </div>
+        </div>
+        <div class="user-pannel">
+        </div>
+      </div>
+    </main>
+    <script src="./js/service.js"></script>
+    <script src="./js/getDailyReport.js"></script>
+    <script src="./js/getWeeklyReport.js"></script>
+    <script src="./js/getMonthlyReport.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
